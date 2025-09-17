@@ -12,6 +12,10 @@ body {
     min-height: 100vh;
     position: relative;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 main {
     max-width: 1440px;
@@ -26,6 +30,9 @@ main {
     min-height: 100vh;
     position: relative;
     z-index: 1;
+
+    max-width: 100%;
+    box-sizing: border-box;
 }
 p {
     font-size: 18px;
@@ -153,7 +160,7 @@ h1.name {
 
 .media-left-box img, .media-right-box video {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
     padding: 5px;
 }
