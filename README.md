@@ -18,5 +18,5 @@ I am a Stockholm-based extra and model with experience in commercials, TV series
 My portfolio highlights my versatility in both humorous and dramatic roles.  
 
 ## 🔗 Links
-- Portfolio website: [https://yublagov.github.io/Extra-model-potfolio/]
+- Portfolio website: https://yublagov.github.io/Extra-model-potfolio
 
