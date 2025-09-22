@@ -2,7 +2,7 @@
     --default-font-family: "SF Pro Display", "Manrope", sans-serif;
     --name-font-family: "Manrope", sans-serif;
     --default-font-weight: 600;
-    --col-boder: 1px solid #e5e7eb
+    --col-boder: 1px solid #e5e7eb;
 }
 body {
     font-family: var(--default-font-family);
@@ -17,11 +17,10 @@ html, body {
     overflow-x: hidden;
 }
 
-main {
+.page-wrapper {
     max-width: 1440px;
     margin: 0 auto;
-}
-.page-wrapper {
+
     margin: 0 1.5rem 0 1.5rem;
     border-left: 1px solid;
     border-right: 1px solid;
@@ -46,8 +45,8 @@ p {
     display: block;
 }
 .intro-section {
-    position: relative; /* allow absolute video positioning */
-    height: 350px; /* set height for video */
+    position: relative; 
+    height: 350px; 
 }
 .video-container {
     position: relative; 
@@ -58,8 +57,8 @@ p {
 
 .intro {
     position: relative;
-    z-index: 1; /* place text above video */
-    margin: 0; /* optional: adjust spacing */
+    z-index: 1; 
+    margin: 0; 
     padding: 20px 10px;
     line-height: 1.5rem;
 }
@@ -118,11 +117,11 @@ ul{
   padding: 0; 
 }
 footer ul {
-  padding-right: 1.5rem; /* вернули отступ справа */
+  padding-right: 1.5rem; 
 }
 .navSection {
     display: flex;
-    justify-content: space-between; /* name left, icons right */
+    justify-content: space-between; 
     padding: 0.3rem 0.5rem;
 }
 
@@ -178,7 +177,7 @@ h1.name {
         background: none;
         color: #fff;
         padding: 0.2rem;
-        order: -1; /* поднимаем наверх */
+        order: -1; 
     }
 .media-overlay img {
     object-position: center;
@@ -257,7 +256,7 @@ footer::after {
         height: 60vh; 
     }
     .video-container {
-         display: block; /* show video */
+         display: block; 
          position: absolute; 
          top: 0;
          left: 0;
@@ -271,15 +270,15 @@ footer::after {
        width: 100%;
        height: 100%;
        object-fit: cover;
-       opacity: 0.8; /* make text readable */
+       opacity: 0.8; 
     }
     .intro {
        position: relative;
-       z-index: 1; /* place text above video */
-       margin: 0; /* optional: adjust spacing */
+       z-index: 1; 
+       margin: 0; 
        padding: 10px 20px;
     }
-    /* --- Видео на фоне: затемнённое и контрастное --- */
+    
     .video-container video {
        filter: brightness(0.8) contrast(1);
        transition: filter 0.3s ease;
@@ -301,22 +300,35 @@ footer::after {
     .media-empty {
         display: block;
     }
+    .media-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%; 
+        width: 1px;
+        background: linear-gradient(180deg, #ff5f6d, #ffc371, #33ccff, #9966ff);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 1.5s cubic-bezier(0.4,0,0.2,1);
+        z-index: 1;
+    }
+
+    .media-section.border-animate::before {
+        transform: scaleY(1);
+    }
 
     .media-left-box {
-        border-right: var(--col-boder);
-        border-image: linear-gradient(90deg, #ff5f6d, #ffc371, #33ccff, #9966ff) 1;
         justify-content: flex-end;
         align-items: flex-end;
     } 
     .media-right-box {
-        border-left: var(--col-boder);
-        border-image: linear-gradient(90deg, #ff5f6d, #ffc371, #33ccff, #9966ff) 1;
         justify-content: flex-start;
     }
 
     .media-left-box img{
         width: 82%;
-        height: 66.7%;
+        height: 70%;
         border-top: var(--col-boder);
         border-left: var(--col-boder);
         border-image: linear-gradient(90deg, #ff5f6d, #ffc371, #33ccff, #9966ff) 1;
@@ -329,7 +341,7 @@ footer::after {
     }
     .media-right-box video {
         width: 82%;
-        height: 66.7%;
+        height: 70%;
         border-bottom: var(--col-boder);
         border-right: var(--col-boder);
         border-image: linear-gradient(90deg, #ff5f6d, #ffc371, #33ccff, #9966ff) 1;
