@@ -13,3 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(section);
   });
 });
+
+// Play lower videos only when they scroll into view, pause when out of view
+document.addEventListener('DOMContentLoaded', function () {
+  const videos = document.querySelectorAll('video.lazy-video');
+  const vObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const v = entry.target;
+      if (entry.isIntersecting) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { rootMargin: '200px 0px', threshold: 0.1 });
+  videos.forEach(v => vObserver.observe(v));
+});
